@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{Fragment,useState} from 'react';
+import Formulario from './components/Formulario';
+import Secuencia from './components/SecuanciaFibonacci';
 function App() {
+
+  const[dato, obtenerDato] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <div className="container">
+        <h1 className="text-center">Serie Fibonacci</h1>
+        <Formulario
+          obtenerDato={obtenerDato}
+        />
+        {dato ? <Secuencia dato={dato}/> : null}
+      </div>
+    </Fragment>
   );
 }
 
