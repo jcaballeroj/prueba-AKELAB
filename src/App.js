@@ -1,18 +1,36 @@
 import React,{Fragment,useState} from 'react';
-import Formulario from './components/Formulario';
-import Secuencia from './components/SecuanciaFibonacci';
+import Formulario from './components/secuenciaFibonacci/Formulario';
+import Secuencia from './components/secuenciaFibonacci/SecuanciaFibonacci';
+
+import SerieAkelab from './components/secuenciaAke/Formulario';
+import SecuenciaAkelab from './components/secuenciaAke/SecuenciaAkelab';
 function App() {
 
   const[dato, obtenerDato] = useState('');
+  const[series, obtenerSerie] = useState('');
 
   return (
     <Fragment>
       <div className="container">
-        <h1 className="text-center">Serie Fibonacci</h1>
-        <Formulario
-          obtenerDato={obtenerDato}
-        />
-        {dato ? <Secuencia dato={dato}/> : null}
+        <div className="row">
+          <div className="col-sm-6">
+            <h1>Serie Fibonacci Ejercicio N°1</h1>
+              <Formulario
+                obtenerDato={obtenerDato}
+              />
+              {dato ? <Secuencia dato={dato}/> : null}
+          </div>
+
+          <div className="col-sm-6">
+            <h1>Serie de Numeros Ejercicio N°2</h1>
+            <p>reemplazar los número múltiplos de 3 por la palabra AKE y los números múltiplos de 5 por la palabra LAB.</p>
+
+            <SerieAkelab
+              obtenerSerie={obtenerSerie}
+            />
+            { series ? <SecuenciaAkelab series={series} /> : null}
+          </div>
+        </div>
       </div>
     </Fragment>
   );

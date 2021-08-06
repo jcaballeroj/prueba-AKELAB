@@ -6,9 +6,12 @@ const SecuenciaFibonacci = ({dato}) => {
      for (let i = 2; i < dato; i++) {
          secuencia.push(secuencia[i-1] + secuencia[i-2]);
      }
+     let b = secuencia.map(item =>{
+         return (item + " ");
+     });
 
     return ( 
-        <p>la secuencia fibonacci es: {secuencia}</p>
+        <p>{b}</p>
      );
 }
  

@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import Error from './Error';
+import Error from '../Error';
 const Formulario = ({obtenerDato}) => {
 
     const[numero, guardarNumero] = useState('');
@@ -34,7 +34,7 @@ const Formulario = ({obtenerDato}) => {
                 type="submit"
                 value="Enviar"
             />
-            { error ? <Error mensaje="El numero ingresado debe ser postitivo"/> : null}
+            { error ? <Error mensaje="El dato ingresado debe ser numerico y mayor a 1"/> : null}
         </form>
      );
 }
