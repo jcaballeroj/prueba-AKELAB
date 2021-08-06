@@ -4,34 +4,60 @@ import Secuencia from './components/secuenciaFibonacci/SecuanciaFibonacci';
 
 import FormulariAkelab from './components/secuenciaAke/Formulario';
 import SecuenciaAkelab from './components/secuenciaAke/SecuenciaAkelab';
+
+import Landing from './pages/Landing';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
 
   const[dato, obtenerDato] = useState('');
   const[series, obtenerSerie] = useState('');
-
+  const[error, setError] = useState(false);
   return (
     <Fragment>
+      <Router>
       <div className="container">
-        <div className="row">
-          <div className="col-sm-6">
-            <h1>Serie Fibonacci Ejercicio N°1</h1>
-              <Formulario
-                obtenerDato={obtenerDato}
-              />
-              {dato ? <Secuencia dato={dato}/> : null}
-          </div>
+        <nav className="navbar navbar-expand-lg navbar-light ">
+          <ul className="navbar-nav mr-auto" >
+            <li className="nav-item mr-4">
+              <Link to="/">Fibonacci</Link>
+            </li>
+            <li className="nav-item mr-4">
+              <Link to="/akelab">Secuencia Akelab</Link>
+            </li>
+            <li className="nav-item ">
+              <Link to="/web">Dashboard</Link>
+            </li>
+          </ul>
+        </nav>
+        
 
-          <div className="col-sm-6">
-            <h1>Serie de Numeros Ejercicio N°2</h1>
-            <p>reemplazar los número múltiplos de 3 por la palabra AKE y los números múltiplos de 5 por la palabra LAB.</p>
-
+        
+        <Switch>
+          <Route exact path="/">
+            <Formulario
+                  obtenerDato={obtenerDato}
+                  setError={(e)=>setError(e)}
+                />
+                {dato && !error ? <Secuencia dato={dato}/> : null}
+          </Route>
+          <Route path="/akelab">
             <FormulariAkelab
-              obtenerSerie={obtenerSerie}
-            />
-            { series ? <SecuenciaAkelab series={series} /> : null}
-          </div>
-        </div>
+                obtenerSerie={obtenerSerie}
+                setError={(e)=>setError(e)}
+              />
+              { series && !error ? <SecuenciaAkelab series={series} /> : null}
+          </Route>
+          <Route path="/web">
+            <Landing/>
+          </Route>
+        </Switch>
       </div>
+    </Router>
     </Fragment>
   );
 }

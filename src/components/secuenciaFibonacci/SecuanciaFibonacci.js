@@ -11,7 +11,7 @@ const SecuenciaFibonacci = ({dato}) => {
      });
 
     return ( 
-        <p>{b}</p>
+        <p className="text-center">{b}</p>
      );
 }
  

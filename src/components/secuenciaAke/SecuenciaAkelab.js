@@ -16,7 +16,7 @@ const SecuenciaAkelab = ({series}) => {
     });
 
     return ( 
-        <p>{resultado}</p>
+        <p className="text-center mt-2">{resultado}</p>
      );
 }
  
