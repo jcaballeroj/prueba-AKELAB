@@ -2,7 +2,7 @@ import React,{Fragment,useState} from 'react';
 import Formulario from './components/secuenciaFibonacci/Formulario';
 import Secuencia from './components/secuenciaFibonacci/SecuanciaFibonacci';
 
-import SerieAkelab from './components/secuenciaAke/Formulario';
+import FormulariAkelab from './components/secuenciaAke/Formulario';
 import SecuenciaAkelab from './components/secuenciaAke/SecuenciaAkelab';
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
             <h1>Serie de Numeros Ejercicio N°2</h1>
             <p>reemplazar los número múltiplos de 3 por la palabra AKE y los números múltiplos de 5 por la palabra LAB.</p>
 
-            <SerieAkelab
+            <FormulariAkelab
               obtenerSerie={obtenerSerie}
             />
             { series ? <SecuenciaAkelab series={series} /> : null}
