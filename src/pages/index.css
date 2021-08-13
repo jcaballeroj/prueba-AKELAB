@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+::-webkit-scrollbar {
+    width: 3px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(145, 145, 145); 
+    border-radius: 3px;
+  }
+  
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 48px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+.search_input{
+    border: 0;
+    outline: none;
+    width: 400px;
+}    
+.nav-link::after{
+    content: none;
+}
+.nav-item{
+    margin-left: 10px;
+    border-left: 1px solid gray;
+}
+
+.genero{
+    margin-top:10px;
+    border-radius: 8px ;
+    overflow: scroll;
+    height: 230px;   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.dropdown-item:hover{
+    background-color:rgb(197, 196, 194);
+    border-left: 2px solid gray;
+}
+
+.content{
+    display: flex;
+    border: 1px solid black;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-title{
+    padding: 10px;
+    font-family:'Rubik', sans-serif;
+    font-size: 1.3rem;
+    justify-content: center;
+    font-weight:bold;
+}
+.content-image{
+    width: 400px;
+    padding: 10px;
+}
+.content-description{
+    padding: 30px;
+    justify-content:center;
+    margin-top: 50px;
+}
+.text-movie{
+    font-family:'Rubik', sans-serif;
+    font-size: 1.3rem;
+}
+.content-footer{
+    margin-top: 50px;
+}

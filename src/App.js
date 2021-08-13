@@ -23,13 +23,13 @@ function App() {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light ">
           <ul className="navbar-nav mr-auto" >
-            <li className="nav-item mr-4">
+            <li className="nav-i mr-4">
               <Link to="/">Fibonacci</Link>
             </li>
-            <li className="nav-item mr-4">
+            <li className="nav-i mr-4">
               <Link to="/akelab">Secuencia Akelab</Link>
             </li>
-            <li className="nav-item ">
+            <li className="nav-i">
               <Link to="/web">Dashboard</Link>
             </li>
           </ul>
