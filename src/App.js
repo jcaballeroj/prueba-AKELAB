@@ -20,7 +20,7 @@ function App() {
   return (
     <Fragment>
       <Router>
-      <div className="container">
+      <div>
         <nav className="navbar navbar-expand-lg navbar-light ">
           <ul className="navbar-nav mr-auto" >
             <li className="nav-i mr-4">

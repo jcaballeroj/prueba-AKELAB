@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 ::-webkit-scrollbar {
-    width: 3px;
+    width:4px;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(145, 145, 145); 
+    background: rgb(226, 210, 210); 
     border-radius: 3px;
-  }
-  
+}
 .searchbar{
+    display:flex;
     margin-bottom: auto;
     margin-top: auto;
     height: 48px;
     width: 100%;
     background-color: #ffffff;
-    border: 0.5px solid black;
+    border: 1px solid rgb(173, 172, 172);
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -24,56 +24,121 @@
     border: 0;
     outline: none;
     width: 400px;
-}    
+}
+
+input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    margin-right: 1px;
+    width: 32px;
+    height: 19px;
+}
+.label{
+    display: block;
+    margin-left: 1px;
+}
 .nav-link::after{
     content: none;
 }
 .nav-item{
-    margin-left: 10px;
-    border-left: 1px solid gray;
+    margin-left: 15px;
+    border-left: 1px solid rgb(173, 171, 171);
+}
+
+.filter{
+    margin-left: 20px;
 }
 
 .genero{
-    margin-top:10px;
+    margin-top:15px;
     border-radius: 8px ;
     overflow: scroll;
-    height: 230px;   
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-x: hidden;
+    height: 245px; 
+    width: 200px;
+    background: rgb(248, 246, 246);  
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.19);
+    margin-left: -158px;
+}
+.cuadrado{
+    position: fixed;
+    margin-left: 170px;
+    border-top: 2px solid rgba(0,0,0,.15);
+    border-left: 2px solid rgba(0,0,0,.15);
+    width: 22px;
+    height: 21px;
+    background: rgb(248, 246, 246);
+    transform: rotate(45deg);
+    margin-top: -19px;
 }
 .dropdown-item:hover{
     background-color:rgb(197, 196, 194);
-    border-left: 2px solid gray;
+    border-left: 3px solid gray;
+}
+.item-order{
+    margin-left: 10px;
 }
 
+.ordenar{
+    margin-top:10px;
+    border-radius: 8px ;
+    height: 245px; 
+    width: 200px;
+    background: rgb(248, 246, 246);  
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.19);
+    margin-left: 0px;
+
+}
+.cuadrado2{
+    position: fixed;
+    margin-left: 85px;
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-left: 1px solid rgba(0,0,0,.15);
+    width: 22px;
+    height: 21px;
+    background: rgb(248, 246, 246);
+    transform: rotate(45deg);
+    margin-top: -19px;
+}
+
+/*Estilos Card */
+.content-cards{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+.img-title{
+    margin-top: 5px;
+    margin-left:10px;
+    font-family: cursive;
+}
 .content{
-    display: flex;
-    border: 1px solid black;
-    margin-right: 10px;
+    border: 2px solid rgb(90, 87, 87);;
+    margin-left: 8px;
     border-radius: 10px;
     margin-bottom: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 1px 4px 9px 1px rgba(0, 0, 0, 0.2);
+    width: 550px;
 }
-
-.img-title{
-    padding: 10px;
-    font-family:'Rubik', sans-serif;
-    font-size: 1.3rem;
-    justify-content: center;
-    font-weight:bold;
+.image{
+    padding:10px;
+    width: 200px;
 }
-.content-image{
-    width: 400px;
-    padding: 10px;
-}
-.content-description{
-    padding: 30px;
-    justify-content:center;
-    margin-top: 50px;
+.content-movie{
+    display: flex;
 }
 .text-movie{
-    font-family:'Rubik', sans-serif;
-    font-size: 1.3rem;
+    margin-top: 10px;
+    font-size:.8rem;
 }
 .content-footer{
-    margin-top: 50px;
+    margin-top: 10px;
+}
+.card-text{
+    margin: 0;
+    padding: 0;
+    font-size:.8rem;
 }

@@ -20,13 +20,16 @@ const Landing = () => {
     },[]);
     return ( 
         <Fragment>
-            <Navbar
-                generos={generos}
-            />
-            <Listado
-                datos={datos}
-                url={url}
-            />
+            <div>
+                <Navbar
+                    key={generos}
+                    generos={generos}
+                />
+                <Listado
+                    datos={datos}
+                    url={url}
+                />
+                </div>
         </Fragment>
      );
 }
