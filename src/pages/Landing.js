@@ -5,31 +5,47 @@ import Listado from './components/ListadoImagenes';
 
 import json from './Movies.json';
 const Landing = () => {
-    const[datos, setDatos] = useState([])
-    const[url,setUrl] = useState()
-    const[generos,setGeneros] = useState([])
+    const[datos, setDatos] = useState([]);
+    const[url,setUrl] = useState();
+    const[generos,setGeneros] = useState([]);
+
+    useEffect(()=>{
+        loading();
+    },[]);
 
     const loading = () => {
         const dato = JSON.parse(JSON.stringify(json));
         setUrl(dato.images_url)
-        setGeneros(dato.genres)
+        let dataGeneros = dato.genres.map(item => {
+            return {...item, state:false}
+        })
+        setGeneros(dataGeneros)
         setDatos(dato.results);
     }
-    useEffect(()=>{
-        loading();
-    },[]);
+
+    const changeStateGenders = (e,item) =>{
+        //console.log(e, item);
+        let newData = Array.from(generos).map(itm => {
+            if(itm.id === item.id){
+                return {...itm, state:e.target.checked}
+            }else{
+                return itm
+            }
+        });
+        setGeneros(newData);
+    }
+  
     return ( 
         <Fragment>
-            <div>
                 <Navbar
-                    key={generos}
                     generos={generos}
-                />
-                <Listado
-                    datos={datos}
-                    url={url}
-                />
-                </div>
+                    onClickCheckbox={(e,item) => changeStateGenders(e,item)}
+                />            
+            <Listado
+                generos={generos}
+                datos={datos}
+                url={url}
+            />
         </Fragment>
      );
 }

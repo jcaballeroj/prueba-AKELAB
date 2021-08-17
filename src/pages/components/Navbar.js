@@ -1,41 +1,38 @@
-import React,{useState} from 'react';
+import React from 'react';
 import '../index.css';
 //imagenes
 import SearchIcon from '../img/Vector.png'
 import FilterIcon from '../img/Filter Icon.png';
 import ArrowIcon from '../img/Arrow Icon.png';
-const Navbar = ({generos}) => {
-
-    const[consulta, setConsulta] = useState("");
-    const obtenerGenero = (e) =>{
-        e.stopPropagation();
-    }
+const Navbar = ({generos,onClickCheckbox}) => {
     return ( 
         
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-sm">
             <form className="form-inline my-2 my-lg-0">
                 <div className="searchbar">
-                    <input className="search_input" type="text" name="" placeholder="Search..."  value={consulta} onChange={e => setConsulta(e.target.value)}/>
+                    <input className="search_input" type="text" name="" placeholder="Search..." />
                     <p className="search_icon"> <img src={SearchIcon} alt=""/> </p>
                 </div>
             </form>
             
 
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
+            <div className="" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto list-items">
                     <li className="nav-item dropdown content-genero">
-                        <a className="nav-link filter dropdown-toggle ml-2 " href="{#}" id="navbarDropdown"  data-toggle="dropdown" >
+                        <a className="nav-link filter dropdown-toggle ml-2 " href="{#}" id="navbarDropdown"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
                             <img src={FilterIcon} alt="" />
                         </a>
                         <div className="dropdown-menu genero" >
                             <div className="cuadrado"></div> 
-                           <p className="ml-3 text-dark bold">Genero</p>
+                            <p className="ml-3 text-dark bold">Genero</p>
                             {generos.map((item) => (
                                 <>
-                                    <label className="dropdown-item label" onClick={obtenerGenero}>
-                                        <input type="checkbox" value={item.id}/>
-                                        {item.name}
-                                    </label>
+                                   <div key={item.id}>
+                                        <label  className="dropdown-item label" >
+                                            <input type="checkbox" value={item.state} onClick={(e)=>onClickCheckbox(e,item)}/>
+                                            {item.name}
+                                        </label>
+                                   </div>
                                 </>
                             ))}
                         </div>
