@@ -1,9 +1,8 @@
 import React,{useEffect,useState} from 'react';
 import Cards from './Cards';
 
-const ListadoImagenes = ({datos,url,generos}) => {
+const ListadoImagenes = ({datos,url,generos,termino}) => {
     const[generosids, setGenerosIds] = useState([]);
-
     useEffect(()=>{
         setIds();
     },[generos])
@@ -15,8 +14,14 @@ const ListadoImagenes = ({datos,url,generos}) => {
     }
     return ( 
         <div className="content-cards">
-            { generosids.length > 0 ?
-                datos.filter(item => generosids.includes(item.genre_ids.map(i => i)[0])).map(item => (
+            {termino ? datos.filter(item=> item.title.includes(termino)).map(item => (
+                    <Cards 
+                        key={item.id}
+                        item={item}
+                        url={url}
+                        generos={generos.filter(gn => item.genre_ids.includes(gn.id))}
+                    />
+                )) :  generosids.length > 0 ? datos.filter(item => generosids.includes(item.genre_ids.map(i => i)[0])).map(item => (
                     <Cards 
                         key={item.id}
                         item={item}
@@ -24,7 +29,6 @@ const ListadoImagenes = ({datos,url,generos}) => {
                         generos={generos.filter(gn => item.genre_ids.includes(gn.id))}
                     />
                 ))
-                
                 : 
                 datos.map(item => (
                 <Cards 

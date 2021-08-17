@@ -4,13 +4,13 @@ import '../index.css';
 import SearchIcon from '../img/Vector.png'
 import FilterIcon from '../img/Filter Icon.png';
 import ArrowIcon from '../img/Arrow Icon.png';
-const Navbar = ({generos,onClickCheckbox}) => {
+const Navbar = ({generos,onClickCheckbox,guardarTermino}) => {
     return ( 
         
         <nav className="navbar navbar-expand-sm">
             <form className="form-inline my-2 my-lg-0">
                 <div className="searchbar">
-                    <input className="search_input" type="text" name="" placeholder="Search..." />
+                    <input className="search_input" type="text" name="" placeholder="Search..." onChange={(e) => guardarTermino(e.target.value)} />
                     <p className="search_icon"> <img src={SearchIcon} alt=""/> </p>
                 </div>
             </form>

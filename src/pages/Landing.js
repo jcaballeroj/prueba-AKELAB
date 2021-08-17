@@ -8,6 +8,7 @@ const Landing = () => {
     const[datos, setDatos] = useState([]);
     const[url,setUrl] = useState();
     const[generos,setGeneros] = useState([]);
+    const[termino, guardarTermino] = useState('')
 
     useEffect(()=>{
         loading();
@@ -22,7 +23,6 @@ const Landing = () => {
         setGeneros(dataGeneros)
         setDatos(dato.results);
     }
-
     const changeStateGenders = (e,item) =>{
         //console.log(e, item);
         let newData = Array.from(generos).map(itm => {
@@ -40,11 +40,13 @@ const Landing = () => {
                 <Navbar
                     generos={generos}
                     onClickCheckbox={(e,item) => changeStateGenders(e,item)}
+                    guardarTermino={guardarTermino}
                 />            
             <Listado
                 generos={generos}
                 datos={datos}
                 url={url}
+                termino={termino}
             />
         </Fragment>
      );
